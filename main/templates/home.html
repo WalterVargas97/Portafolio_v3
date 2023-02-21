@@ -71,22 +71,23 @@
             <section class="resume-sectio" id ="proyectos">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Proyectos</h2>
-                    {% for Project in Projects%}
-                        <!--<div class="col-md-4 p-4">
-                        #<div class="card bg-black card-project">-->
+                    
+                    {% for project in projects%}
+                    <div class="col-md-4 p-4">
+                        <div class="card bg-black card-project">
                             <img src ="{{project.image.url}}" alt="{{project.title}}" class="card-img-top"/>
                             <div class="card-body">
             
-                                <h2>{{Project.title}}</h2>
-                                <p>{{project.description}}</p>
+                                <h2>{{project.title}}</h2><p>{{project.description}}</p>
                                 
                                 {% if project.url%}
                                     <a href="{{project.url}}" target = _blank class ="btn btn-light rounded-0 btn-sm">{{project.url}}</a>    
                                 {% endif %}
-                                {% endfor %}
                             </div>
-                    
-                    </div>
+                        </div>
+                    </div>  
+                </div>  
+                {% endfor %}
                 </section>
             <hr class="m-0" />
             <!-- Experience-->

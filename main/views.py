@@ -1,9 +1,17 @@
-from django.shortcuts import render
-from .models import Project
-from .models import Experience
+from django.shortcuts import render, get_object_or_404
+from .models import project
+from .models import experience
 # Create your views here.
 
 def mainView(request):
-    project = Project.objects.all()
-    experience = Experience.objects.all()
-    return render(request, 'home.html', {'project':Project, 'experience':Experience})
+    projects = project.objects.all()
+    experiences = experience.objects.all()
+    return render(request, 'home.html', {'project':project, 'experience':experience})
+
+def render_project(request):
+    project = project.objects.all()
+    return render(request, 'project.html', {'project':project})
+
+def render_experience(request):
+    experience = experience.objects.all()
+    return render(request, 'experience.html', {'experience':experience})
